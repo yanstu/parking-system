@@ -1,0 +1,1 @@
+> 不同页面的api使用xxxxapi.js

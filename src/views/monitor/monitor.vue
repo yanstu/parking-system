@@ -6,12 +6,27 @@
           <div>当前操作员: admin</div>
           <button>换班</button>
         </li>
-        <li><img src="../../assets/修改密码.png" alt="">修改密码</li>
-        <li><img src="../../assets/车辆查询.png" alt="">在场车辆查询</li>
-        <li><img src="../../assets/费用查询.png" alt="">出场收费查询</li>
-        <li><img src="../../assets/收费.png" alt="">中央收费</li>
-        <li><img src="../../assets/设置.png" alt="">系统设置</li>
-        <li>{{nowTime[0]}} {{nowTime[1]}} 星期{{nowTime[2]}}</li>
+        <li>
+          <img src="../../assets/修改密码.png" alt="" />
+          修改密码
+        </li>
+        <li>
+          <img src="../../assets/车辆查询.png" alt="" />
+          在场车辆查询
+        </li>
+        <li>
+          <img src="../../assets/费用查询.png" alt="" />
+          出场收费查询
+        </li>
+        <li>
+          <img src="../../assets/收费.png" alt="" />
+          中央收费
+        </li>
+        <li>
+          <img src="../../assets/设置.png" alt="" />
+          系统设置
+        </li>
+        <li>{{ nowTime[0] }} {{ nowTime[1] }} 星期{{ nowTime[2] }}</li>
       </ul>
     </div>
     <div class="main">
@@ -23,39 +38,39 @@
           </div>
         </div>
         <div class="main-left-bottom">
-            <div class="main-left-bottom-content-top">
-                <div class="main-left-bottom-content-top-container">
-                    <div>无车牌小图</div>
-                    <div>贵A12345</div>
-                    <div>
-                        <select name="" id="">
-                            <option value="入口一:192.168.1.100">入口一:192.168.1.100</option>
-                        </select>
-                    </div>
-                    <div>开闸</div>
-                    <div>手工录入</div>
-                </div>
-                <div class="main-left-bottom-content-top-container">
-                    <div>无车牌小图</div>
-                    <div>贵A12345</div>
-                    <div>
-                        <select name="" id="">
-                            <option value="出口一:192.168.1.100">入口一:192.168.1.100</option>
-                        </select>
-                    </div>
-                    <div>开闸</div>
-                    <div>手工录入</div>
-                </div>
+          <div class="main-left-bottom-content-top">
+            <div class="main-left-bottom-content-top-container">
+              <div>无车牌小图</div>
+              <div>贵A12345</div>
+              <div>
+                <select name="" id="">
+                  <option value="入口一:192.168.1.100">入口一:192.168.1.100</option>
+                </select>
+              </div>
+              <div>开闸</div>
+              <div>手工录入</div>
             </div>
-            <div></div>
-            <div></div>
+            <div class="main-left-bottom-content-top-container">
+              <div>无车牌小图</div>
+              <div>贵A12345</div>
+              <div>
+                <select name="" id="">
+                  <option value="出口一:192.168.1.100">入口一:192.168.1.100</option>
+                </select>
+              </div>
+              <div>开闸</div>
+              <div>手工录入</div>
+            </div>
+          </div>
+          <div></div>
+          <div></div>
         </div>
       </div>
 
       <div class="main-right">
         <div class="main-right-content">
           <div class="main-right-content-top">入口一:[192.168.0.1]</div>
-          <img src="../../assets/车辆进入.png" alt="">
+          <img src="../../assets/车辆进入.png" alt="" />
           <div class="main-right-content-bottom">
             <div>入场时间：</div>
             <div>贵A12345</div>
@@ -63,7 +78,7 @@
         </div>
         <div class="main-right-content">
           <div class="main-right-content-top">出口大图</div>
-          <img src="../../assets/车辆离开.png" alt="">
+          <img src="../../assets/车辆离开.png" alt="" />
           <div class="main-right-content-bottom">
             <div>出场通道</div>
             <div></div>
@@ -80,36 +95,36 @@
 export default {
   data() {
     return {
-      screenHeight: "", //当前屏幕高度
-      nowTime: []       //当前时间
+      screenHeight: '', //当前屏幕高度
+      nowTime: [] //当前时间
     };
   },
   mounted() {
     //获得屏幕高度
     this.screenHeight = window.screen.height;
     // 当前时间获取
-    this.currentTime()
+    this.currentTime();
   },
   methods: {
-        // 当前时间获取
-      currentTime() {
-        var Week = ['日','一','二','三','四','五','六'];  
-        setInterval(() => {
-            this.nowTime = []
-            let myDate = new Date();
-            let day;
-            for(let i = 0; i<=Week.length; i++) {
-                if ( myDate.getDay() == i ) {
-                    day = Week[i]
-                }
-            }
-            this.nowTime.push(
-                myDate.getFullYear() +'-'+ (myDate.getMonth()+1) +'-'+ myDate.getDate(),
-                myDate.getHours() +':'+ myDate.getMinutes() +':'+ myDate.getSeconds(),
-                day
-            )
-        },1000)
-      }
+    // 当前时间获取
+    currentTime() {
+      var Week = ['日', '一', '二', '三', '四', '五', '六'];
+      setInterval(() => {
+        this.nowTime = [];
+        let myDate = new Date();
+        let day;
+        for (let i = 0; i <= Week.length; i++) {
+          if (myDate.getDay() == i) {
+            day = Week[i];
+          }
+        }
+        this.nowTime.push(
+          myDate.getFullYear() + '-' + (myDate.getMonth() + 1) + '-' + myDate.getDate(),
+          myDate.getHours() + ':' + myDate.getMinutes() + ':' + myDate.getSeconds(),
+          day
+        );
+      }, 1000);
+    }
   }
 };
 </script>
@@ -138,26 +153,26 @@ export default {
   border-right: 1px solid rgba(255, 255, 255, 0.2);
 }
 .nav li img {
-    display: block;
-    width: 42px;
-    height: 42px;
-    margin: 4px auto;
+  display: block;
+  width: 42px;
+  height: 42px;
+  margin: 4px auto;
 }
 .nav li:nth-child(2) {
-    border-left: 1px solid rgba(255, 255, 255, 0.2);
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
 }
 .nav li:first-child {
   flex-grow: 3;
   border-right: none;
 }
 .nav li:first-child button {
-    width: 50%;
-    outline: none;
-    background-color: rgba(255, 255, 255, 0.3);
-    margin-top: 15px;
-    border: 1px solid #ffffff;
-    color: #ffffff;
-    border-radius: 5px;
+  width: 50%;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.3);
+  margin-top: 15px;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  border-radius: 5px;
 }
 .nav li:last-child {
   flex-grow: 3;
@@ -195,19 +210,19 @@ export default {
   background-color: #c8cbd0;
 }
 .main-left-bottom-content-top {
-    height: 15%;
-    display: flex;
-    justify-content: space-between;
+  height: 15%;
+  display: flex;
+  justify-content: space-between;
 }
 .main-left-bottom-content-top-container {
-    display: flex;
-    width: 100%;
-    text-align: center;
-    justify-content: space-between;
+  display: flex;
+  width: 100%;
+  text-align: center;
+  justify-content: space-between;
 }
 .main-left-bottom-content-top-container div {
-    border: 1px solid red;
-    width: 100%;
+  border: 1px solid red;
+  width: 100%;
 }
 
 /* 中间右边 */
@@ -224,8 +239,8 @@ export default {
   position: relative;
 }
 .main-right-content img {
-    margin: 13% auto;
-    display: block;
+  margin: 13% auto;
+  display: block;
 }
 .main-right-content-top {
   width: 65%;
@@ -249,4 +264,3 @@ export default {
   line-height: 33px;
 }
 </style>
-
