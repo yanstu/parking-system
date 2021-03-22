@@ -2,14 +2,25 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
+// 引入样式
+import "../node_modules/vue-easytable/libs/theme-default/index.css";
+// 引入组件库
+import {
+  VeTable,
+  VePagination,
+  VeIcon,
+  VeLoading,
+  VeLocale
+} from "vue-easytable";
 
-// WebSocket封装方法
-import * as socketApi from './api/socket'
-Vue.prototype.socketApi = socketApi
+Vue.use(VeTable);
+Vue.use(VePagination);
+Vue.use(VeIcon);
+Vue.use(VeLoading);
 
-//import './utils/flexible.js';
+Vue.prototype.$veLoading = VeLoading;
+Vue.prototype.$veLocale = VeLocale;
 
-Vue.prototype.$store = store
 Vue.config.productionTip = false
 
 new Vue({
